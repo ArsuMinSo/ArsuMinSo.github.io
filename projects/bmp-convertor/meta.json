@@ -1,0 +1,6 @@
+{
+  "name": "BMP Convertor",
+  "description": "Obousměrný převod mezi rastrovými obrázky BMP a zvukovými soubory WAV. Generování, vizualizace a konverze dat.",
+  "image": "image.jpg",
+  "page": "index.html"
+}

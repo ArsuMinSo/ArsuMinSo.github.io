@@ -1,1 +1,373 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArsuMinSo | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #f5f7fa 0%, #e3f2fd 100%);
+            color: #222;
+        }
+        .hero {
+            background: linear-gradient(120deg, #007acc 0%, #222 100%);
+            color: #fff;
+            padding: 4rem 0 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+        }
+        .hero-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .profile-avatar {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #fff;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.13);
+            background: #000;
+        }
+        .tagline {
+            font-size: 1.4rem;
+            margin: 1rem 0 1.5rem 0;
+            color: #e0e0e0;
+            font-weight: 500;
+        }
+        .hero-links a {
+            display: inline-block;
+            margin: 0 0.5rem;
+            padding: 0.5rem 1.2rem;
+            background: rgba(255,255,255,0.13);
+            border-radius: 20px;
+            color: #fff;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s;
+        }
+        .hero-links a:hover {
+            background: #fff;
+            color: #007acc;
+        }
+        main {
+            max-width: 980px;
+            margin: 2.5rem auto;
+            padding: 2.5rem;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 32px rgba(0,0,0,0.10);
+        }
+        h1 {
+            margin: 0 0 0.5rem 0;
+            font-size: 3.1rem;
+            font-weight: 900;
+            letter-spacing: -2px;
+        }
+        h2 {
+            margin-top: 2.5rem;
+            color: #007acc;
+            font-size: 2rem;
+            font-weight: 800;
+        }
+        .about-section {
+            margin-bottom: 2.5rem;
+        }
+        .about-flex {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+        }
+        .about-text {
+            flex: 2;
+            min-width: 220px;
+        }
+        .about-highlights {
+            list-style: none;
+            padding: 0;
+            margin: 1.2em 0 0 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2em;
+        }
+        .about-highlights li {
+            background: #e3f2fd;
+            color: #007acc;
+            border-radius: 10px;
+            padding: 0.5em 1.1em;
+            font-weight: 600;
+            font-size: 1.05em;
+            box-shadow: 0 1px 4px rgba(0,122,204,0.07);
+        }
+        .about-visual {
+            flex: 1;
+            min-width: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .skills {
+            margin: 1.2rem 0 0.5rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5em;
+        }
+        .skill-badge {
+            display: inline-block;
+            background: #e3f2fd;
+            color: #007acc;
+            border-radius: 12px;
+            padding: 0.45em 1.2em;
+            margin: 0.2em 0.3em;
+            font-size: 1.08em;
+            font-weight: 600;
+            box-shadow: 0 1px 4px rgba(0,122,204,0.07);
+            letter-spacing: 0.5px;
+        }
+        .project-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .project-card {
+            background: #f7fafc;
+            border-radius: 14px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+            flex: 1 1 300px;
+            min-width: 300px;
+            max-width: 370px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transition: transform 0.18s, box-shadow 0.18s;
+            border: 2px solid #e3f2fd;
+        }
+        .pro-card:hover {
+            transform: translateY(-10px) scale(1.035);
+            box-shadow: 0 8px 32px rgba(0,122,204,0.18);
+            border-color: #007acc;
+        }
+        .project-image-wrapper {
+            width: 100%;
+            height: 140px;
+            background: linear-gradient(120deg, #e3f2fd 0%, #cfd8dc 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .project-image-placeholder {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-bottom: 1px solid #e3f2fd;
+        }
+        .project-info {
+            padding: 1.2rem 1.5rem 1.5rem 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .project-info h3 {
+            margin: 0 0 0.5rem 0;
+            color: #222;
+            font-size: 1.35rem;
+            font-weight: 800;
+        }
+        .project-info p {
+            flex: 1;
+            margin-bottom: 0.9rem;
+            color: #444;
+            font-size: 1.08em;
+        }
+        .project-more {
+            color: #007acc;
+            font-weight: 700;
+            font-size: 1.05em;
+            letter-spacing: 0.5px;
+        }
+        .contact-flex {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            flex-wrap: wrap;
+        }
+        .contact-info {
+            flex: 2;
+            min-width: 220px;
+        }
+        .contact-email {
+            display: inline-block;
+            margin-top: 0.7em;
+            font-size: 1.15em;
+            color: #007acc;
+            font-weight: 700;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .contact-email:hover {
+            color: #005b99;
+            text-decoration: underline;
+        }
+        .contact-socials {
+            flex: 1;
+            min-width: 120px;
+            display: flex;
+            align-items: center;
+            gap: 1.2em;
+        }
+        .footer-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1em;
+            color: #888;
+            font-size: 1.05em;
+            padding: 1.5rem 0 0.5rem 0;
+        }
+        .footer-divider {
+            color: #bbb;
+            font-size: 1.2em;
+        }
+        @media (max-width: 900px) {
+            main {
+                padding: 1.2rem;
+            }
+            .about-flex, .contact-flex {
+                flex-direction: column;
+                gap: 1.2rem;
+            }
+            .project-cards {
+                gap: 1.2rem;
+            }
+        }
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.1rem;
+            }
+            h2 {
+                font-size: 1.3rem;
+            }
+            .project-card {
+                min-width: 90vw;
+                max-width: 98vw;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-content">
+            <img src="content/profile-picture.jpg" alt="Profile picture" class="profile-avatar">
+            <h1>ArsuMinSo</h1>
+            <p class="tagline">Web Developer & Open Source Enthusiast</p>
+            <div class="hero-links">
+                <a href="https://github.com/ArsuMinSo" target="_blank" aria-label="GitHub"><svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" style="vertical-align:middle;"><path d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.1 3.29 9.43 7.86 10.96.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.36-1.3-1.72-1.3-1.72-1.06-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.73 1.27 3.4.97.11-.75.41-1.27.74-1.56-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .98-.31 3.2 1.18a11.1 11.1 0 0 1 2.92-.39c.99 0 1.99.13 2.92.39 2.22-1.49 3.2-1.18 3.2-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.41-5.27 5.7.42.36.79 1.09.79 2.2 0 1.59-.01 2.87-.01 3.26 0 .31.21.68.8.56A11.52 11.52 0 0 0 23.5 12.02C23.5 5.74 18.27.5 12 .5z"/></svg></a>
+                <!-- Add more social links if needed -->
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="about-section">
+            <h2>About Me</h2>
+            <div class="about-flex">
+                <div class="about-text">
+                    <p>
+                        Hi! I'm <strong>ArsuMinSo</strong>, a passionate developer focused on building web applications and exploring new technologies. I love open source, clean code, and learning new things. My work blends creativity, technical excellence, and a relentless drive for innovation.
+                    </p>
+                    <ul class="about-highlights">
+                        <li>💡 Innovative problem solver</li>
+                        <li>🛠️ Full-stack expertise</li>
+                        <li>🌍 Open source contributor</li>
+                        <li>🚀 Always learning</li>
+                    </ul>
+                </div>
+                <div class="about-visual">
+                    <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="60" cy="60" r="58" stroke="#007acc" stroke-width="4" fill="#f5f7fa"/>
+                        <circle cx="60" cy="60" r="40" fill="#e3f2fd"/>
+                        <text x="60" y="70" text-anchor="middle" font-size="32" fill="#007acc" font-family="Arial, sans-serif">:)</text>
+                    </svg>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2>Skills</h2>
+            <div class="skills">
+                <span class="skill-badge">JavaScript</span>
+                <span class="skill-badge">TypeScript</span>
+                <span class="skill-badge">HTML</span>
+                <span class="skill-badge">CSS</span>
+                <span class="skill-badge">React</span>
+                <span class="skill-badge">Node.js</span>
+                <span class="skill-badge">Python</span>
+                <span class="skill-badge">Git</span>
+                <span class="skill-badge">Linux</span>
+            </div>
+        </section>
+        <section>
+            <h2>Projects</h2>
+            <div class="project-cards" id="project-cards">
+                <!-- Project cards will be loaded here by JavaScript -->
+            </div>
+        </section>
+        <section>
+            <h2>Contact</h2>
+            <div class="contact-flex">
+                <div class="contact-info">
+                    <p>Let's build something great together!</p>
+                    <a class="contact-email" href="mailto:your.email@example.com"><svg width="20" height="20" fill="currentColor" style="vertical-align:middle;margin-right:0.5em;" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 2v.01L12 13 4 6.01V6h16zM4 20V8.99l8 6.99 8-6.99V20H4z"/></svg>your.email@example.com</a>
+                </div>
+                <div class="contact-socials">
+                    <a href="https://github.com/ArsuMinSo" target="_blank" aria-label="GitHub"><svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .5C5.73.5.5 5.74.5 12.02c0 5.1 3.29 9.43 7.86 10.96.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.36-1.3-1.72-1.3-1.72-1.06-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.73 1.27 3.4.97.11-.75.41-1.27.74-1.56-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .98-.31 3.2 1.18a11.1 11.1 0 0 1 2.92-.39c.99 0 1.99.13 2.92.39 2.22-1.49 3.2-1.18 3.2-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.41-5.27 5.7.42.36.79 1.09.79 2.2 0 1.59-.01 2.87-.01 3.26 0 .31.21.68.8.56A11.52 11.52 0 0 0 23.5 12.02C23.5 5.74 18.27.5 12 .5z"/></svg></a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <span>&copy; 2024 ArsuMinSo</span>
+            <span class="footer-divider">|</span>
+            <span>Made with <span style="color:#e25555;">&#10084;</span> and lots of coffee</span>
+        </div>
+    </footer>
+    <script>
+    // Dynamically load all project folders with meta.json
+    async function loadProjects() {
+        const projectCards = document.getElementById('project-cards');
+        const projects = [
+            {
+                name: "BMP Convertor",
+                description: "Obousměrný převod mezi rastrovými obrázky BMP a zvukovými soubory WAV. Generování, vizualizace a konverze dat.",
+                image: "projects/bmp-convertor/image.jpg",
+                link: "projects/bmp-convertor/index.html"
+            }
+        ];
+        for (const project of projects) {
+            const card = document.createElement('div');
+            card.className = 'project-card pro-card';
+            card.innerHTML = `
+                <a href="${project.link}" style="text-decoration:none;color:inherit;display:block;">
+                    <div class="project-image-wrapper">
+                        <img src="${project.image}" alt="${project.name}" class="project-image-placeholder" style="object-fit:cover;width:100%;height:140px;">
+                    </div>
+                    <div class="project-info">
+                        <h3>${project.name}</h3>
+                        <p>${project.description}</p>
+                        <span class="project-more">Read more</span>
+                    </div>
+                </a>
+            `;
+            projectCards.appendChild(card);
+        }
+    }
+    loadProjects();
+    </script>
+</body>
+</html>
