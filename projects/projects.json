@@ -1,0 +1,8 @@
+[
+  {
+    "name": "BMP Convertor",
+    "description": "Bidirectional conversion between BMP images and WAV audio files. Generation, visualization, and conversion of data.",
+    "image": "./projects/python/bmp-wav-convertor/icon.png",
+    "link": "./projects/python/bmp-wav-convertor/bmp-wav-convertor.html"
+  }
+]
