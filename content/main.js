@@ -19,6 +19,7 @@ async function loadProjects() {
             </a>
         `;
         projectCards.appendChild(card);
+        console.log(`Loaded project: ${project.name}`);
     }
 }
 
