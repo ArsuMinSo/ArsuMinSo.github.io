@@ -323,6 +323,15 @@ h2 {
 .project-github:hover {
     background: #005b99;
 }
+.no-underline-link {
+  color: inherit;
+  text-decoration: none;
+  font-weight: inherit;
+}
+.no-underline-link:hover, .no-underline-link:focus {
+  color: inherit;
+  text-decoration: none;
+}
 @media (max-width: 900px) {
     main {
         padding: 1.2rem;

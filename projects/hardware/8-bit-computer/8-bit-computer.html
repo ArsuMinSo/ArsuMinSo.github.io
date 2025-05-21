@@ -15,18 +15,22 @@
             <span class="arrow-left">&#8592;</span> Back to Projects
         </nav>
     <div class="project-detail-card">
-    <h1 class="project-title">8-bit Processor</h1>
-<img src="img/block_diagram.png" alt="Block Diagram" class="md-img">
+    <h1 class="project-title"><a href="https://github.com/ArsuMinSo/8-bit-computer" class="no-underline-link" target="_blank" rel="noopener">8-bit Processor</a></h1>
+<img src="img/block_diagram.png" alt="Block Diagram" class="project-img">
 <p><em>Block diagram of the 8-bit processor architecture. This diagram shows the main components (bus, registers, ALU, control unit, RAM) and how they are interconnected. It helps visualize the data flow and control signals in the processor.</em></p>
 <h2 class="project-section">Architecture and Components</h2>
 <p>This 8-bit processor is designed according to the von Neumann architecture. It contains a simple bus, instruction register, ALU, control unit, and RAM. Everything is built from basic logic gates. The architecture is modular, making it easy to understand and expand for educational purposes.</p>
-<img src="img/signal_flow.png" alt="Signal Flow" class="md-img">
-<p><em>Signal flow between Program Counter, Control Unit, and other components. This illustration clarifies how control signals like Cp, Ep, Le, and others coordinate the operation of the processor's modules.</em></p>
-<h3 class="project-subsection">Bus</h3>
+<img src="img/signal_flow.png" alt="Signal Flow" class="project-img">
+<p><em>Signal flow between Program Counter, Control Unit, and other components. This illustration shows how control signals like Cp, Ep, Le, and others coordinate the operation of the processor's modules.</em></p>
+<h3 class="project-subsection">Bus Scheme</h3>
+<img src="img/bus.png" alt="Bus Scheme" class="project-img">
+<p><em>W Bus interconnects all main components.</em></p>
 <ul>
 <li><strong>8-bit W Bus</strong>: The only data bus connecting all main components. The W Bus is central to the processor, allowing data transfer between registers, memory, and the ALU. All read and write operations use this bus.</li>
 </ul>
-<h3 class="project-subsection">Program Counter (PC)</h3>
+<h3 class="project-subsection">Program Counter Scheme</h3>
+<img src="img/pc.png" alt="Program Counter" class="project-img">
+<p><em>4-bit Program Counter with increment, load, and output control.</em></p>
 <ul>
 <li><strong>4-bit register</strong>. The program counter keeps track of the address of the next instruction to execute.</li>
 <li><strong>Signals</strong>:</li>
@@ -37,7 +41,9 @@
 <li><code>Le</code>: loads a new value into the counter, used for jumps and branches.</li>
 <li><code>CLK</code>, <code>CLR</code>: clocking and resetting signals to synchronize and initialize the counter.</li>
 </ul>
-<h3 class="project-subsection">Registers</h3>
+<h3 class="project-subsection">Registers Scheme</h3>
+<img src="img/registers_and_alu.png" alt="Registers" class="project-img">
+<p><em>General-purpose 8-bit registers A and B on top and bottom of the picture, alu in the middle.</em></p>
 <ul>
 <li><strong>8-bit registers A and B</strong>: These are general-purpose registers used for arithmetic and logic operations.</li>
 </ul>
@@ -46,39 +52,47 @@
 <li><code>La</code>: loads a value from W Bus into A.</li>
 <li><code>Lb</code>: loads a value from W Bus into B.</li>
 </ul>
-<h3 class="project-subsection">ALU (Arithmetic Logic Unit)</h3>
+<h3 class="project-subsection">ALU (Arithmetic Logic Unit) Scheme</h3>
+<img src="img/alu.png" alt="ALU Operation Example" class="project-img">
+<p><em>ALU performing addition and subtraction. The diagram shows how operands are selected and results are placed on the bus.</em></p>
 <ul>
 <li>Operations: addition, subtraction (8-bit). The ALU performs basic arithmetic and logic operations on data from the registers.</li>
 <li>Control: <code>Op</code> (0 = ADD, 1 = SUB), selects the operation.</li>
 <li>Output to bus: <code>Eu</code>, enables the ALU's output onto the W Bus.</li>
 </ul>
-<img src="img/alu_operation.png" alt="ALU Operation Example" class="md-img">
-<p><em>Example of ALU performing addition and subtraction. The diagram shows how operands are selected and results are placed on the bus.</em></p>
-<h3 class="project-subsection">Output Register</h3>
+<h3 class="project-subsection">Output Register Scheme</h3>
+<img src="img/output_register.png" alt="Output Register" class="project-img">
+<p><em>8-bit output register for external data display.</em></p>
 <ul>
 <li><strong>8-bit Out</strong>: output register controlled by signal <code>Lo</code>. This register holds data to be sent to external devices or displayed as output.</li>
 </ul>
-<h3 class="project-subsection">Address Register (MAR)</h3>
+<h3 class="project-subsection">Address Register (MAR) Scheme</h3>
+<img src="img/mar.png" alt="Address Register" class="project-img">
+<p><em>4-bit Memory Address Register (MAR).</em></p>
 <ul>
 <li><strong>4-bit</strong>. The Memory Address Register (MAR) holds the address in RAM to be accessed.</li>
 <li><code>Lm</code>: loads address from W Bus, allowing the processor to select which memory location to read or write.</li>
 </ul>
-<h3 class="project-subsection">RAM</h3>
+<h3 class="project-subsection">RAM Scheme</h3>
+<img src="img/ram.png" alt="RAM Layout" class="project-img">
+<p><em>Memory map of the 16×8-bit RAM. Each cell can be addressed and holds 8 bits of data.</em></p>
 <ul>
 <li><strong>16×8-bit memory</strong>. The RAM stores both program instructions and data.</li>
 <li><code>Lr</code>: stores W Bus content at address given by MAR, enabling write operations.</li>
 <li><code>Er</code>: reads data from the given address to W Bus, enabling read operations.</li>
 </ul>
-<img src="img/ram_layout.png" alt="RAM Layout" class="md-img">
-<p><em>Memory map of the 16×8-bit RAM. Each cell can be addressed and holds 8 bits of data.</em></p>
-<h3 class="project-subsection">Instruction Register (IR)</h3>
+<h3 class="project-subsection">Instruction Register (IR) Scheme</h3>
+<img src="img/ir.png" alt="Instruction Register" class="project-img">
+<p><em>8-bit Instruction Register (IR) for current instruction.</em></p>
 <ul>
 <li><strong>8-bit</strong>. The IR holds the current instruction being executed.</li>
 <li><code>Li</code>: loads instruction from W Bus.</li>
 <li>Upper 4 bits → control unit, used to decode the operation.</li>
 <li>Lower 4 bits → W Bus, often used as an address or immediate value.</li>
 </ul>
-<h3 class="project-subsection">Control Unit</h3>
+<h3 class="project-subsection">Control Unit Scheme</h3>
+<img src="img/counter.png" alt="Counter" class="project-img">
+<p><em>4-bit counter in the control unit. Steps through instruction execution phases.</em></p>
 <ul>
 <li>Generates signals for all components. The control unit orchestrates the operation of the processor by generating timing and control signals.</li>
 <li>Uses a <strong>6-bit ring counter</strong>, controlled by signals:</li>
@@ -87,12 +101,11 @@
 <li><code>Cr</code>: resets the counter (T1), starting a new instruction cycle.</li>
 <li><code>Lc</code>: direct load of value into PC, used for jumps and branches.</li>
 </ul>
-<img src="img/ring_counter.png" alt="Ring Counter" class="md-img">
-<p><em>Diagram of the 6-bit ring counter in the control unit. This counter steps through the phases of instruction execution.</em></p>
+<p>Control uint emits signal on 16 bit Control Buss in format: C = Cp, Ep, Lm, Li,  Ei, La, Ea, Op,  Eu, Lb, Lo, Lr,  Er, Cr, Lc, 00</p>
+<p>Each signal is send to block of procesor, that he controls.</p>
 <hr class="footer-divider">
 <h2 class="project-section"><strong>Instruction Set</strong></h2>
-<img src="img/machine_code_table.png" alt="Machine Code Table" class="md-img">
-<p><em>Mapping of binary/hex instructions to operations. This table shows how each instruction is encoded and what it does.</em></p>
+<p>Mapping of binary/hex instructions to operations. This table shows how each instruction is encoded and what it does.</p>
 <table class="project-detail-table">
 <tr><th class="project-detail-th">Binary</th><th class="project-detail-th">Hex</th><th class="project-detail-th">Mnemonic</th><th class="project-detail-th">Description</th></tr>
 <tr><td class="project-detail-td"><code>0000 xxxx</code></td><td class="project-detail-td"><code>0x00</code></td><td class="project-detail-td"><code>NOP</code></td><td class="project-detail-td">No operation</td></tr>
@@ -107,8 +120,6 @@
 <p>Unused codes (e.g., <code>0x50</code>–<code>0xC0</code>) are reserved and currently serve as <code>NOP</code>. This allows for future expansion or custom instructions.</p>
 <hr class="footer-divider">
 <h2 class="project-section"><strong>Instruction Control – Clock Cycles</strong></h2>
-<img src="img/instruction_cycle.png" alt="Instruction Cycle Timeline" class="md-img">
-<p><em>Timeline of the 6 clock cycles (T1–T6) for instruction execution. Each row shows which signals are active during each phase for a given instruction.</em></p>
 <p>The control unit has 6 internal steps (T1–T6), during which it sets active signals. Each instruction is broken down into these steps, ensuring precise timing and coordination of all processor components. This table helps clarify the micro-operations performed during each instruction cycle.</p>
 <table class="project-detail-table">
 <tr><th class="project-detail-th">Instruction</th><th class="project-detail-th">T1</th><th class="project-detail-th">T2</th><th class="project-detail-th">T3</th><th class="project-detail-th">T4</th><th class="project-detail-th">T5</th><th class="project-detail-th">T6</th></tr>
