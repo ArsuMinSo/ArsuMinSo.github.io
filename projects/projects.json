@@ -2,15 +2,15 @@
     {
     "name": "8 Bit Computer",
     "description": "A simple 8-bit computer simulator. It can run programs written in a custom assembly language.",
-    "image": "./projects/hardware/8-bit-computer/icon.png",
-    "link": "./projects/hardware/8-bit-computer/8-bit-computer.html",
+    "image": "./projects/hardware/8-bit_computer/icon.png",
+    "link": "./projects/hardware/8-bit_computer/8-bit_computer.html",
     "date": "2025-05-15"
   },
   {
     "name": "BMP Convertor",
     "description": "Bidirectional conversion between BMP images and WAV audio files. Generation, visualization, and conversion of data.",
-    "image": "./projects/python/bmp-wav-convertor/icon.png",
-    "link": "./projects/python/bmp-wav-convertor/bmp-wav-convertor.html",
+    "image": "./projects/python/bmp2wav_convertor/icon.png",
+    "link": "./projects/python/bmp2wav_convertor/bmp2wav_convertor.html",
     "date": "2025-05-02"
   }
 ]

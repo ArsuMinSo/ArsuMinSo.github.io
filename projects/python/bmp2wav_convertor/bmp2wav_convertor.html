@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMP Convertor | Python | Project | ArsuMinSo</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/style.css">
+</head>
+<body>
+    <main class="section project-detail-main">
+      <nav class="project-nav">
+        <button id="backToProjects" class="back-btn" onclick="location.href='../../../index.html#projects'">
+          <span class="arrow-left">&#8592;</span> Back to Projects
+        </button>
+      </nav>
+      <div class="project-detail-card">
+        <div class="project-header">
+          <div>
+            <h1 class="project-title"><a href="https://github.com/ArsuMinSo/BMP2WAV_convertor" class="no-underline-link" target="_blank" rel="noopener">BMP2WAV Converter</a></h1>
+            <p class="project-desc">Functions provided by the application and the technological capabilities that enable bidirectional conversion between image and sound data, their generation, and visualization.</p>
+          </div>
+        </div>
+        <section class="project-section">
+          <h2>Random Image Generation</h2>
+          <img src="./img/generate_random_pic.png" alt="Example Image" class="project-img" width="100%">
+          <h3>Features</h3>
+          <ul>
+            <li>The resolution is defined by the user using width and height in pixels.</li>
+            <li>Color components (R, G, B) are generated independently for each pixel.</li>
+            <li>Output format is 24-bit uncompressed BMP.</li>
+            <li>Usage: The output image can be used as input for conversion to WAV or as a test file.</li>
+          </ul>
+          <h3>Command Line Parameters</h3>
+          <pre><code>py ./main.py -gb &lt;width&gt; &lt;height&gt; &lt;output_path&gt; [--show -s] [--show-with-axes -sx] [--test]</code></pre>
+          <h3>Optional Flags</h3>
+          <ul>
+            <li><code>-s</code>: Display the generated image.</li>
+            <li><code>-sx</code>: Display the image with axes.</li>
+            <li><code>--test</code>: Save the preview to the test folder.</li>
+          </ul>
+          <h3>Example Usage</h3>
+          <pre><code>py ./main.py -gb 100 100 ./content/media/out/random.bmp -s</code></pre>
+        </section>
+        <hr>
+        <section class="project-section">
+          <h2>Random Sound Generation</h2>
+          <img src="./img/generate_random_wav.png" alt="Random Waveform Example" class="project-img" width="100%">
+          <h3>Features</h3>
+          <ul>
+            <li>The duration is defined by the number of samples.</li>
+            <li>Sampling rate: 44,100 Hz.</li>
+            <li>Number of channels: 1 (mono).</li>
+            <li>Bit depth: 32-bit per sample.</li>
+            <li>Output format: WAV PCM (uncompressed).</li>
+          </ul>
+          <h3>Command Line Parameters</h3>
+          <pre><code>py ./main.py -gw &lt;samples&gt; &lt;output_path&gt; [--show -s] [--show-with-axes -sx] [--test]</code></pre>
+          <h3>Optional Flags</h3>
+          <ul>
+            <li><code>-s</code>: Display the waveform.</li>
+            <li><code>-sx</code>: Display the waveform with axes.</li>
+            <li><code>--test</code>: Save the preview to the test folder.</li>
+          </ul>
+          <h3>Example Usage</h3>
+          <pre><code>py ./main.py -gw 1000 ./content/media/out/random_wave.wav -s</code></pre>
+        </section>
+        <hr>
+        <section class="project-section">
+          <h2>Sine Wave Generation</h2>
+          <img src="./img/generate_sin.png" alt="Sine Waveform Example" class="project-img" width="100%">
+          <h3>Features</h3>
+          <ul>
+            <li>Frequency is user-defined.</li>
+            <li>Sampling rate: 44,100 Hz.</li>
+            <li>Number of samples: user-defined.</li>
+            <li>Channels: 1 (mono).</li>
+            <li>Bit depth: 32-bit per sample.</li>
+            <li>Output format: WAV PCM (uncompressed).</li>
+          </ul>
+          <h3>Command Line Parameters</h3>
+          <pre><code>py ./main.py -gw &lt;samples&gt; &lt;output_path&gt; -f &lt;frequency&gt; [--show -s] [--show-with-axes -sx] [--test]</code></pre>
+          <h3>Example Usage</h3>
+          <pre><code>py ./main.py -gw 1000 ./content/media/out/sine_wave.wav -f 440 -s</code></pre>
+        </section>
+        <hr>
+        <section class="project-section">
+          <h2>BMP to WAV Conversion</h2>
+          <img src="./img/bmp2wav_QR.png" alt="BMP to WAV Example" class="project-img" width="100%">
+          <h3>Features</h3>
+          <ul>
+            <li>Supported BMP formats: 1-bit, 4-bit, 8-bit, 24-bit.</li>
+            <li>Output WAV:
+              <ul>
+                <li>Sampling rate: 44,100 Hz.</li>
+                <li>Bit depth: 32-bit.</li>
+                <li>Mono.</li>
+              </ul>
+            </li>
+          </ul>
+          <h3>Command Line Parameters</h3>
+          <pre><code>py ./main.py --convert &lt;input.bmp&gt; &lt;output.wav&gt; [--show -s] [--show-with-axes -sx] [--test]</code></pre>
+          <h3>Example Usage</h3>
+          <pre><code>py ./main.py --convert ./content/media/bmp/1bit.bmp ./content/media/out/1bit.wav -s</code></pre>
+        </section>
+        <hr>
+        <section class="project-section">
+          <h2>WAV to BMP Conversion</h2>
+          <img src="./img/wav2bmp_QR.png" alt="WAV to BMP Example" class="project-img" width="100%">
+          <h3>Features</h3>
+          <ul>
+            <li>Converts amplitude values back to RGB pixel values.</li>
+            <li>Reconstructs the original image resolution.</li>
+          </ul>
+          <h3>Command Line Parameters</h3>
+          <pre><code>py ./main.py --convert &lt;input.wav&gt; &lt;output.bmp&gt; [-c width height] [--show -s] [--show-with-axes -sx] [--test]</code></pre>
+          <h3>Example Usage</h3>
+          <pre><code>py ./main.py --convert ./content/media/out/1bit.wav ./content/media/out/1bit.bmp -s</code></pre>
+        </section>
+        <hr>
+        <section class="project-section">
+          <h2>File Data Visualization</h2>
+          <img src="./img/show_info_1.png" alt="Visualization Example" class="project-img" width="100%">
+          <img src="./img/show_info_2.png" alt="Visualization Example" class="project-img" width="100%">
+          <h3>Command Line Parameters</h3>
+          <pre><code>py ./main.py -i &lt;file.wav or file.bmp&gt; [--show -s] [--show-with-axes -sx] [--test]</code></pre>
+          <h3>Example Usage</h3>
+          <pre><code>py ./main.py -i ./content/media/bmp/24bit.bmp -s</code></pre>
+        </section>
+      </div>
+    </main>
+</body>
+</html>
