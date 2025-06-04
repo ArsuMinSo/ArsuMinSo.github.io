@@ -12,5 +12,12 @@
     "image": "./projects/python/bmp2wav_convertor/icon.png",
     "link": "./projects/python/bmp2wav_convertor/bmp2wav_convertor.html",
     "date": "2025-05-02"
+  },
+  {
+    "name": "OXO Game",
+    "description": "A command-line implementation of the classic Tic-Tac-Toe game, featuring a human player competing against an AI opponent powered by the Minimax algorithm.",
+    "image": "./projects/python/OXOgame/icon.png",
+    "link": "./projects/python/OXOgame/OXOgame.html",
+    "date": "2025-05-02"
   }
 ]

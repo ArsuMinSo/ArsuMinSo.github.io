@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OXOgame</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../../css/style.css">
+</head>
+<body>
+    <main class="section project-detail-main"> 
+        <nav class="project-nav">
+            <button id="backToProjects" class="back-btn" onclick="location.href='../../../index.html#projects'">
+            <span class="arrow-left">&#8592;</span> Back to Projects
+        </nav>
+    <div class="project-detail-card">
+    <h1 class="project-title"><a href="https://github.com/ArsuMinSo/OXOgame" class="no-underline-link" target="_blank" rel="noopener">Tic-Tac-Toe: Human vs AI (Minimax Algorithm)</a></h1>
+<p>A command-line implementation of the classic Tic-Tac-Toe game, featuring a human player competing against an AI opponent powered by the <strong>Minimax algorithm</strong>.</p>
+<hr class="footer-divider">
+<h2 class="project-section">Features</h2>
+<ul>
+<li>Object-oriented design with clearly defined classes (<code>Board</code>, <code>Player</code>, <code>AIPlayer</code>, <code>Game</code>)</li><li>Unbeatable AI utilizing the Minimax decision-making algorithm</li>
+<li>Includes input validation, undo functionality, and clear game logic</li>
+<li>Typed Python 3.9+ code with full docstrings for maintainability and clarity</li></ul>
+<hr class="footer-divider">
+<h2 class="project-section">Getting Started</h2>
+<h3 class="project-subsection">Prerequisites</h3>
+<ul>
+<li>Python 3.9 or higher (due to use of advanced type hints like <code>list[list[str]]</code>)</li></ul>
+<h3 class="project-subsection">Running the Game</h3>
+<p>Clone the repository and run the main script:</p>
+<code class='project-multiline-code'>git clone https://github.com/ArsuMinSo/oxogame.git
+cd tic-tac-toe-ai
+python main.py
+</code><hr class="footer-divider">
+<h2 class="project-section">How to Play</h2>
+<p>The game board is represented as a 3x3 grid of numbered positions:</p>
+<code class='project-multiline-code'>1 | 2 | 3
+4 | 5 | 6
+7 | 8 | 9
+</code><p>On your turn, enter a number between 1–9 to place your symbol.</p>
+<p>The AI will calculate and execute the optimal counter move.</p>
+<p>The game ends when either player wins or the board is full (draw).</p>
+<hr class="footer-divider">
+<h2 class="project-section">Project Structure</h2>
+<code class='project-multiline-code'>.
+├── board.py       # Board and human player logic
+├── aiplayer.py    # Human player
+├── aiplayer.py    # AI player implementing the minimax algorithm
+├── main.py        # Game loop and application entry point
+</code><a href="https://github.com/ArsuMinSo/OXOgame/wiki/Tic‐Tac‐Toe-with-AI-(Minimax)" class="project-link" target="_blank">Click for full documentation</a>
+<hr class="footer-divider">
+<h2 class="project-section">AI Implementation</h2>
+<p>The <code>AIPlayer</code> class implements the <strong>Minimax algorithm</strong>, which simulates all possible game states to choose the optimal move. The AI always plays optimally and cannot be beaten — at best, the human player can achieve a draw.</p><p>Minimax evaluation:</p>
+<ul>
+<li>Win: +1</li>
+<li>Loss: -1</li>
+<li>Draw: 0</li>
+</ul>
+<hr class="footer-divider">
+<h2 class="project-section">Example Output</h2>
+<code class='project-multiline-code'>1 2 3
+4 5 6
+7 8 9
+Enter a number between 1 and 9: 5
+1 2 3
+4 O 6
+7 8 9
+Computer thinking...
+1 2 3
+X O 6
+7 8 9
+</code>
+    </div>
+    </main>
+</body>
+</html>
